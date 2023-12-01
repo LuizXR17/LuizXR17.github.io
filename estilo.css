@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    background-image: url('pkmnn.jpg');
+    background-size: cover;
+}
+
+.pokemon {
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+    display: inline-block;
+    background-color: #fff;
+    background-image: url('pkmn.jpg');
+    background-size: cover;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+}
+
+.pokemon:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+.pokemon img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.pokemon h2 {
+    margin: 10px 0;
+    text-transform: capitalize;
+}
+
+.pokemon p {
+    font-size: 14px;
+    color: #777;
+}
