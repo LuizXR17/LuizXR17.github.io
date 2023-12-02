@@ -11,10 +11,21 @@ Este proyecto es una Pokedex simple que muestra los primeros 251 Pokémon utiliz
 
 - Muestra una lista de los primeros 251 Pokémon con sus imágenes correspondientes.
 - Al hacer clic en un Pokémon, se muestra su variante Shiny (brillante).
+- Muestra habilidades y tipos de los 251 pokemons
+- Buscar Pokemon por tipo: Puedes buscar Pokemon por su tipo en la barra de búsqueda.   Solo tienes que escribir el tipo de Pokemon (por ejemplo, "fuego", "agua", etc.) y la Pokedex mostrará todos los Pokemon de ese tipo.
 - Al hacer clic nuevamente en el Pokémon, se vuelve a su imagen original.
+- Diseño de barra de búsqueda mejorado: La barra de búsqueda tiene un diseño mejorado  que se expande cuando haces clic en ella y se contrae cuando no está en uso.
+
+## Código corregido
+
+Este proyecto ha sido corregido y mejorado. Ahora incluye una barra de búsqueda mejorada y la capacidad de buscar Pokemon por tipo.
 
 ## Como Usar
 Simplemente abre el archivo index.html en tu navegador. Verás una lista de Pokémon. Haz clic en cualquier Pokémon para ver su variante Shiny. Haz clic nuevamente para volver a su imagen original.
+
+## Contribuir
+
+Las contribuciones son bienvenidas. Por favor, abre un issue o un pull request para sugerir cambios o mejoras.
 
 ## Cómo empezar
 
