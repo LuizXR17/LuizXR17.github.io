@@ -80,7 +80,7 @@ const displayPokemon = (pokemon) => {
         <p>Defensa: ${pokeman.defense}</p>
         <p>Velocidad: ${pokeman.speed}</p>
         <p>Descripción: ${pokeman.description}</p>
-        </div>
+        <button onclick="addToCompare(${pokeman.id}); event.stopPropagation();">Añadir a la comparación</button>        </div>
         `)
         .join('');
     pokedex.innerHTML = pokemonHTMLString;
@@ -170,3 +170,63 @@ searchInput.addEventListener('input', function() {
         displayPokemon(filteredPokemon);
     }
 });
+
+let pokemonToCompare = [];
+
+const addToCompare = (pokemonId) => {
+    const pokeman = pokemon.find(p => p.id === pokemonId);
+    pokemonToCompare.push(pokeman);
+
+    Swal.fire({
+        icon: "success",
+    title: "El pokemon se añadio con éxito",
+    showConfirmButton: false,
+    timer: 1500
+});
+}
+
+const comparePokemon = () => {
+    if (pokemonToCompare.length === 0) {
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "¡Algo salió mal!",
+            footer: 'No has añadido ningún pokemon para comparar'
+        });
+    } else {
+        const comparisonHTMLString = pokemonToCompare
+        .map((pokeman) => `
+        <div class="pokemon">
+        <img src="${pokeman.image}"/>
+        <h2>${pokeman.name}</h2>
+        <p>#${pokeman.id}</p>
+        <p>Tipos: ${pokeman.types.join(', ')}</p>
+        <p>Habilidades: ${pokeman.abilities.join(', ')}</p>
+        <p>Altura: ${pokeman.height} cm</p>
+        <p>Peso: ${pokeman.weight} kg</p>
+        <p>Ataque: ${pokeman.attack}</p>
+        <p>Defensa: ${pokeman.defense}</p>
+        <p>Velocidad: ${pokeman.speed}</p>
+        <p>Descripción: ${pokeman.description}</p>
+        </div>
+        `)
+        .join('');
+    pokedex.innerHTML = comparisonHTMLString;
+ }
+}
+
+// Crea un contenedor para el botón
+const buttonContainer = document.createElement('div');
+buttonContainer.classList.add('button-container');
+
+// Añade un botón a la interfaz de usuario para comparar Pokémon
+const compareButton = document.createElement('button');
+compareButton.textContent = 'Comparar Pokémon';
+compareButton.classList.add('btn'); // Añade la clase 'btn' al botón
+compareButton.addEventListener('click', comparePokemon);
+
+// Añade el botón al contenedor
+buttonContainer.appendChild(compareButton);
+
+// Añade el contenedor de botones al body
+document.body.appendChild(buttonContainer);

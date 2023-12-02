@@ -18,6 +18,7 @@ Este proyecto es una Pokedex simple que muestra los primeros 251 Pokémon utiliz
 - Mostrar altura y peso: Ahora cada tarjeta de Pokémon muestra la altura en centímetros y el peso en kilogramos del Pokémon.
 - Mostrar ataque, defensa y velocidad: Cada tarjeta de Pokémon ahora también muestra el ataque, la defensa y la velocidad del Pokémon.
 - Descripción de Pokemon: Cada tarjeta de Pokémon ahora incluye una descripción del Pokémon.
+- Comparar Pokémon: Los usuarios pueden añadir Pokémon a una lista de comparación y ver sus detalles lado a lado.
 
 ## Código corregido
 
@@ -28,9 +29,18 @@ Este proyecto ha sido corregido y mejorado. Aquí están los cambios más recien
 - Se añadió la descripción de cada Pokemon a las tarjetas.
 - Se ajustó la altura de las tarjetas para que todas tengan la misma altura, independientemente de la longitud de la descripción.
 - Se redujo la altura mínima de las tarjetas para hacerlas un poco más pequeñas.
+- Se añadió una verificación para asegurarse de que los usuarios no puedan comparar Pokémon sin añadir primero algún Pokémon a la lista de comparación. Si un usuario intenta comparar sin añadir un Pokémon, se mostrará una alerta de error.
+- Se añadió una alerta de éxito que se muestra cuando un Pokémon se añade a la lista de comparación.
+- Se ajustó la posición de la alerta de éxito para que se muestre en el centro de la pantalla.
 
-## Como Usar
-Simplemente abre el archivo index.html en tu navegador. Verás una lista de Pokémon. Haz clic en cualquier Pokémon para ver su variante Shiny. Haz clic nuevamente para volver a su imagen original.
+
+## Instalación
+
+Para instalar y ejecutar este proyecto, primero clona el repositorio, luego abre el archivo `index.html` en tu navegador.
+
+## Dependencias
+
+Este proyecto utiliza la biblioteca SweetAlert2 para mostrar alertas. Puedes incluirlo en tu proyecto a través de un CDN o instalándolo a través de npm.
 
 ## Cómo empezar
 
