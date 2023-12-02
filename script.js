@@ -24,13 +24,27 @@ searchInput.addEventListener('input', function() {
     displayPokemon(filteredPokemon);
 });
 
+const fetchPokemonSpeciesDetails = async (pokemonId) => {
+    const url = `https://pokeapi.co/api/v2/pokemon-species/${pokemonId}`;
+    const res = await fetch(url);
+    const data = await res.json();
+    const description = data.flavor_text_entries.find(entry => entry.language.name === 'es').flavor_text;
+    return description;
+}
+
 const fetchPokemonDetails = async (pokemonId) => {
     const url = `https://pokeapi.co/api/v2/pokemon/${pokemonId}`;
     const res = await fetch(url);
     const data = await res.json();
     const types = data.types.map(type => translate(type.type.name, typeTranslations));
     const abilities = data.abilities.map(ability => translate(ability.ability.name, abilityTranslations));
-    return { types, abilities };
+    const height = data.height * 10; // Convert decimeters to centimeters
+    const weight = data.weight / 10; // Convert hectograms to kilograms
+    const attack = data.stats.find(stat => stat.stat.name === 'attack').base_stat;
+    const defense = data.stats.find(stat => stat.stat.name === 'defense').base_stat;
+    const speed = data.stats.find(stat => stat.stat.name === 'speed').base_stat;
+    const description = await fetchPokemonSpeciesDetails(pokemonId);
+    return { types, abilities, height, weight, attack, defense, speed, description };
 }
 
 const fetchPokemon = async () => {
@@ -54,14 +68,20 @@ const fetchPokemon = async () => {
 const displayPokemon = (pokemon) => {
     const pokemonHTMLString = pokemon
         .map((pokeman) => `
-<div class="pokemon" onclick="displayShinyPokemon(${pokeman.id})">
-<img src="${pokeman.image}" id="pokemon-${pokeman.id}"/>
-<h2>${pokeman.name}</h2>
-<p>#${pokeman.id}</p>
-<p>Tipos: ${pokeman.types.join(', ')}</p>
-<p>Habilidades: ${pokeman.abilities.join(', ')}</p>
-</div>
-`)
+        <div class="pokemon" onclick="displayShinyPokemon(${pokeman.id})">
+        <img src="${pokeman.image}" id="pokemon-${pokeman.id}"/>
+        <h2>${pokeman.name}</h2>
+        <p>#${pokeman.id}</p>
+        <p>Tipos: ${pokeman.types.join(', ')}</p>
+        <p>Habilidades: ${pokeman.abilities.join(', ')}</p>
+        <p>Altura: ${pokeman.height} cm</p>
+        <p>Peso: ${pokeman.weight} kg</p>
+        <p>Ataque: ${pokeman.attack}</p>
+        <p>Defensa: ${pokeman.defense}</p>
+        <p>Velocidad: ${pokeman.speed}</p>
+        <p>Descripción: ${pokeman.description}</p>
+        </div>
+        `)
         .join('');
     pokedex.innerHTML = pokemonHTMLString;
 }

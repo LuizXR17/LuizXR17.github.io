@@ -15,17 +15,22 @@ Este proyecto es una Pokedex simple que muestra los primeros 251 Pokémon utiliz
 - Buscar Pokemon por tipo: Puedes buscar Pokemon por su tipo en la barra de búsqueda.   Solo tienes que escribir el tipo de Pokemon (por ejemplo, "fuego", "agua", etc.) y la Pokedex mostrará todos los Pokemon de ese tipo.
 - Al hacer clic nuevamente en el Pokémon, se vuelve a su imagen original.
 - Diseño de barra de búsqueda mejorado: La barra de búsqueda tiene un diseño mejorado  que se expande cuando haces clic en ella y se contrae cuando no está en uso.
+- Mostrar altura y peso: Ahora cada tarjeta de Pokémon muestra la altura en centímetros y el peso en kilogramos del Pokémon.
+- Mostrar ataque, defensa y velocidad: Cada tarjeta de Pokémon ahora también muestra el ataque, la defensa y la velocidad del Pokémon.
+- Descripción de Pokemon: Cada tarjeta de Pokémon ahora incluye una descripción del Pokémon.
 
 ## Código corregido
 
-Este proyecto ha sido corregido y mejorado. Ahora incluye una barra de búsqueda mejorada y la capacidad de buscar Pokemon por tipo.
+Este proyecto ha sido corregido y mejorado. Aquí están los cambios más recientes:
+- Barra de búsqueda mejorada
+- Capacidad para buscar Pokémon por tipo
+- Mostrar más detalles sobre cada Pokémon
+- Se añadió la descripción de cada Pokemon a las tarjetas.
+- Se ajustó la altura de las tarjetas para que todas tengan la misma altura, independientemente de la longitud de la descripción.
+- Se redujo la altura mínima de las tarjetas para hacerlas un poco más pequeñas.
 
 ## Como Usar
 Simplemente abre el archivo index.html en tu navegador. Verás una lista de Pokémon. Haz clic en cualquier Pokémon para ver su variante Shiny. Haz clic nuevamente para volver a su imagen original.
-
-## Contribuir
-
-Las contribuciones son bienvenidas. Por favor, abre un issue o un pull request para sugerir cambios o mejoras.
 
 ## Cómo empezar
 
@@ -42,9 +47,14 @@ Sigue estos pasos:
 7. Presiona Enter para crear tu clon local.
 
 ```bash
-$ git clone URL_DEL_REPOSITORIO
+$ git clone https://github.com/LuizXR17/Pokedex-Primera-y-Segunda-Gen
 ```
 8. Navega hasta el directorio del proyecto y abre el archivo index.html en tu navegador para ver la Pokedex en acción.
+
+## Contribuir
+
+Las contribuciones son bienvenidas. Por favor, abre un issue o un pull request para sugerir cambios o mejoras.
+
 ## Tecnologías Utilizadas
 -  ![HTML logo](https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/HTML5_logo_resized.svg/120px-HTML5_logo_resized.svg.png)
 -  ![CSS logo](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/120px-CSS3_logo_and_wordmark.svg.png)
